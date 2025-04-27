@@ -1,43 +1,58 @@
-import { Truck, Clock, Heart, Award } from "lucide-react";
+import { Truck, Clock, Award, CreditCard } from "lucide-react";
 
-const features = [
-  {
-    icon: <Truck className="h-8 w-8" />,
-    title: "Быстрая доставка",
-    description: "Доставка по городу в течение 2 часов после оформления заказа"
-  },
-  {
-    icon: <Clock className="h-8 w-8" />,
-    title: "Свежие цветы",
-    description: "Мы работаем только со свежими цветами и обновляем ассортимент ежедневно"
-  },
-  {
-    icon: <Heart className="h-8 w-8" />,
-    title: "Индивидуальный подход",
-    description: "Создадим букет по вашему вкусу с учетом всех пожеланий"
-  },
-  {
-    icon: <Award className="h-8 w-8" />,
-    title: "Гарантия качества",
-    description: "Гарантируем качество и свежесть всех наших цветов и растений"
-  }
-];
+interface FeatureProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+
+const Feature = ({ icon, title, description }: FeatureProps) => {
+  return (
+    <div className="flex flex-col items-center text-center p-6">
+      <div className="mb-4 bg-bazaar-lightMauve/30 p-4 rounded-full">
+        {icon}
+      </div>
+      <h3 className="font-serif text-lg font-bold mb-2 text-bazaar-navy">{title}</h3>
+      <p className="text-muted-foreground">{description}</p>
+    </div>
+  );
+};
 
 const FeatureSection = () => {
+  const features = [
+    {
+      icon: <Truck className="h-6 w-6 text-bazaar-burgundy" />,
+      title: "Быстрая доставка",
+      description: "Доставим ваш заказ в течение 2 часов по всему городу"
+    },
+    {
+      icon: <Clock className="h-6 w-6 text-bazaar-burgundy" />,
+      title: "Свежие цветы",
+      description: "Работаем только со свежими цветами от проверенных поставщиков"
+    },
+    {
+      icon: <Award className="h-6 w-6 text-bazaar-burgundy" />,
+      title: "Гарантия качества",
+      description: "Если букет не понравится, мы заменим его или вернем деньги"
+    },
+    {
+      icon: <CreditCard className="h-6 w-6 text-bazaar-burgundy" />,
+      title: "Удобная оплата",
+      description: "Принимаем оплату картой, наличными и онлайн-переводами"
+    }
+  ];
+
   return (
-    <section className="py-16 bg-secondary/30">
+    <section className="py-16">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-serif font-bold text-center mb-12">Почему выбирают нас</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
-            <div
+            <Feature
               key={index}
-              className="flex flex-col items-center text-center p-6 bg-card rounded-lg shadow-sm"
-            >
-              <div className="text-primary mb-4">{feature.icon}</div>
-              <h3 className="font-serif text-xl font-semibold mb-2">{feature.title}</h3>
-              <p className="text-muted-foreground">{feature.description}</p>
-            </div>
+              icon={feature.icon}
+              title={feature.title}
+              description={feature.description}
+            />
           ))}
         </div>
       </div>

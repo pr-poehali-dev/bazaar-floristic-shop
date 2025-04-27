@@ -67,11 +67,12 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				bazaar: {
-					green: '#2c6e49',
-					lightGreen: '#4c956c',
-					cream: '#fefee3',
-					beige: '#ffc9b9',
-					peach: '#d68c45'
+					darkNavy: '#252A30',
+					navy: '#2F3640', 
+					burgundy: '#6B3940',
+					mauve: '#A37A81',
+					lightMauve: '#C9B4B8',
+					softPink: '#E8E1E3'
 				}
 			},
 			borderRadius: {
@@ -81,20 +82,12 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
 				},
 				'fade-in': {
 					'0%': { opacity: '0', transform: 'translateY(10px)' },

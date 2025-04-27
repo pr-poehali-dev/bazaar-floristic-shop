@@ -56,13 +56,13 @@ const Index = () => {
         <HeroBanner />
 
         {/* Popular Products */}
-        <section className="py-16">
+        <section className="py-16 bg-bazaar-softPink/30">
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-between mb-8">
-              <h2 className="text-3xl font-serif font-bold">Популярные букеты</h2>
+              <h2 className="text-3xl font-serif font-bold text-bazaar-burgundy">Популярные букеты</h2>
               <Button
                 variant="link"
-                className="text-primary flex items-center"
+                className="text-bazaar-burgundy flex items-center"
               >
                 Смотреть все <ArrowRight className="ml-1 h-4 w-4" />
               </Button>
@@ -82,14 +82,14 @@ const Index = () => {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-serif font-bold mb-6">О магазине Bazaar</h2>
+                <h2 className="text-3xl font-serif font-bold mb-6 text-bazaar-burgundy">О магазине Bazaar</h2>
                 <p className="text-muted-foreground mb-4">
                   Мы создаем уникальные цветочные композиции, которые подчеркнут ваши чувства и сделают любой день особенным. Наша команда флористов имеет многолетний опыт работы и может реализовать самые смелые идеи.
                 </p>
                 <p className="text-muted-foreground mb-6">
                   В нашем магазине вы найдете свежие цветы, стильные букеты, оригинальные композиции и комнатные растения для дома и офиса.
                 </p>
-                <Button className="bg-primary hover:bg-primary/90">Узнать больше</Button>
+                <Button className="bg-bazaar-burgundy hover:bg-bazaar-burgundy/90 text-white">Узнать больше</Button>
               </div>
               <div className="relative h-[400px] rounded-lg overflow-hidden">
                 <img
@@ -103,10 +103,10 @@ const Index = () => {
         </section>
 
         {/* Instagram Section */}
-        <section className="py-16 bg-accent/30">
+        <section className="py-16 bg-bazaar-lightMauve/30">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-serif font-bold mb-4">Следите за нами в Instagram</h2>
+              <h2 className="text-3xl font-serif font-bold mb-4 text-bazaar-burgundy">Следите за нами в Instagram</h2>
               <p className="text-muted-foreground max-w-xl mx-auto">
                 Вдохновляйтесь нашими работами и узнавайте о новинках и скидках первыми
               </p>
@@ -123,7 +123,7 @@ const Index = () => {
               ))}
             </div>
             <div className="text-center mt-8">
-              <Button variant="outline" className="text-primary border-primary">
+              <Button variant="outline" className="text-bazaar-burgundy border-bazaar-burgundy">
                 <Flower className="h-4 w-4 mr-2" /> @bazaar_flowers
               </Button>
             </div>
@@ -132,7 +132,7 @@ const Index = () => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-primary text-primary-foreground py-12">
+      <footer className="bg-bazaar-navy text-white py-12">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>

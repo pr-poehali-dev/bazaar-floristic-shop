@@ -19,13 +19,13 @@ const BazaarNavbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-bazaar-navy text-white border-b border-bazaar-navy/10 shadow-md">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
             <NavLink to="/" className="flex items-center">
-              <span className="font-serif text-2xl font-bold text-primary">Bazaar</span>
+              <span className="font-serif text-2xl font-bold text-bazaar-softPink">Bazaar</span>
             </NavLink>
           </div>
 
@@ -37,8 +37,8 @@ const BazaarNavbar = () => {
                   key={link.path}
                   to={link.path}
                   className={({ isActive }) =>
-                    `px-3 py-2 text-sm font-medium transition-colors hover:text-primary ${
-                      isActive ? "text-primary" : "text-foreground"
+                    `px-3 py-2 text-sm font-medium transition-colors hover:text-bazaar-softPink ${
+                      isActive ? "text-bazaar-softPink" : "text-white"
                     }`
                   }
                 >
@@ -50,15 +50,15 @@ const BazaarNavbar = () => {
 
           {/* Icons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" size="icon">
+            <Button variant="ghost" size="icon" className="text-white hover:text-bazaar-softPink">
               <Search className="h-5 w-5" />
             </Button>
-            <Button variant="ghost" size="icon">
+            <Button variant="ghost" size="icon" className="text-white hover:text-bazaar-softPink">
               <User className="h-5 w-5" />
             </Button>
-            <Button variant="ghost" size="icon">
+            <Button variant="ghost" size="icon" className="text-white hover:text-bazaar-softPink relative">
               <ShoppingCart className="h-5 w-5" />
-              <span className="absolute top-1 right-1 bg-primary text-xs text-primary-foreground rounded-full w-4 h-4 flex items-center justify-center">
+              <span className="absolute top-1 right-1 bg-bazaar-burgundy text-xs text-white rounded-full w-4 h-4 flex items-center justify-center">
                 0
               </span>
             </Button>
@@ -66,7 +66,7 @@ const BazaarNavbar = () => {
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
-            <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)}>
+            <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)} className="text-white">
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>
@@ -75,15 +75,15 @@ const BazaarNavbar = () => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden animate-fade-in">
-          <div className="px-2 pt-2 pb-3 space-y-1 bg-background">
+        <div className="md:hidden animate-fade-in bg-bazaar-navy border-t border-bazaar-navy/20">
+          <div className="px-2 pt-2 pb-3 space-y-1">
             {navLinks.map((link) => (
               <NavLink
                 key={link.path}
                 to={link.path}
                 className={({ isActive }) =>
                   `block px-3 py-2 text-base font-medium ${
-                    isActive ? "text-primary" : "text-foreground"
+                    isActive ? "text-bazaar-softPink" : "text-white"
                   }`
                 }
                 onClick={() => setIsOpen(false)}
@@ -91,16 +91,16 @@ const BazaarNavbar = () => {
                 {link.name}
               </NavLink>
             ))}
-            <div className="flex items-center justify-around py-4 border-t border-border mt-4">
-              <Button variant="ghost" size="icon">
+            <div className="flex items-center justify-around py-4 border-t border-bazaar-navy/20 mt-4">
+              <Button variant="ghost" size="icon" className="text-white hover:text-bazaar-softPink">
                 <Search className="h-5 w-5" />
               </Button>
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" className="text-white hover:text-bazaar-softPink">
                 <User className="h-5 w-5" />
               </Button>
-              <Button variant="ghost" size="icon" className="relative">
+              <Button variant="ghost" size="icon" className="text-white hover:text-bazaar-softPink relative">
                 <ShoppingCart className="h-5 w-5" />
-                <span className="absolute top-1 right-1 bg-primary text-xs text-primary-foreground rounded-full w-4 h-4 flex items-center justify-center">
+                <span className="absolute top-1 right-1 bg-bazaar-burgundy text-xs text-white rounded-full w-4 h-4 flex items-center justify-center">
                   0
                 </span>
               </Button>
